@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="15dp"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".extention.ActivityTax">
+    <LinearLayout
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:src="@drawable/ic_baseline_calculate_24"></ImageView>
+        <TextView
+            android:textAllCaps="true"
+            android:textSize="18dp"
+            android:textColor="#FF9100"
+            android:textStyle="bold"
+            android:text="Tinh thue thu nhap ca nhan"
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:padding="8dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textAllCaps="true"
+            android:textSize="12dp"
+            android:text="Thu nhap (.000VNĐ)"
+            android:layout_marginRight="20dp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"></TextView>
+        <EditText
+            android:inputType="numberDecimal"
+            android:id="@+id/taxSalary"
+            android:hint="Thu nhap thang "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:padding="8dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textAllCaps="true"
+            android:textSize="12dp"
+            android:text="Muc dong BH  (.000VNĐ)"
+            android:layout_marginRight="20dp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"></TextView>
+        <Spinner
+            android:id="@+id/spinnerBH"
+            android:entries="@array/BH"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></Spinner>
+    </LinearLayout>
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textAllCaps="true"
+            android:textSize="12dp"
+            android:text="Nguoi phu thuoc"
+            android:layout_marginRight="20dp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"></TextView>
+        <Spinner
+            android:id="@+id/spinnerPT"
+            android:entries="@array/PT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></Spinner>
+    </LinearLayout>
+    <Button
+        android:layout_margin="10dp"
+        android:id="@+id/taxBtTinh"
+        android:text="Tính"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></Button>
+    <TextView
+        android:padding="10dp"
+        android:text="Thu nhap phai dong"
+        android:id="@+id/taxTaxRes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+    <TextView
+        android:padding="10dp"
+        android:text="Thu nhap sau thue"
+        android:id="@+id/taxTaxIncom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+</LinearLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_marginTop="50dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".Money.ActivitySelectMoney">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:paddingLeft="10dp"
+            android:background="#eee"
+            android:textSize="35dp"
+            android:inputType="numberDecimal"
+            android:id="@+id/uAmount"
+            android:hint="0"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"></EditText>
+        <TextView
+            android:textSize="30dp"
+            android:text=".000 VNĐ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+    </LinearLayout>
+
+    <Spinner
+        android:entries="@array/category"
+        android:id="@+id/uCatogory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></Spinner>
+
+    <RadioGroup
+        android:id="@+id/grb"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/uChi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chi"></RadioButton>
+
+        <RadioButton
+            android:checked="true"
+            android:id="@+id/uThu"
+            android:text="Thu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></RadioButton>
+    </RadioGroup>
+    <EditText
+        android:id="@+id/uDate"
+        android:hint="Time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></EditText>
+    <EditText
+        android:id="@+id/uNote"
+        android:hint="Ghi chu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></EditText>\
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:layout_margin="1dp"
+            android:id="@+id/uBtUpdate"
+            android:text="Update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></Button>
+        <Button
+            android:backgroundTint="#000000"
+            android:layout_margin="1dp"
+            android:id="@+id/uBtDelete"
+            android:text="Delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></Button>
+        <Button
+            android:layout_margin="1dp"
+            android:backgroundTint="#ccc"
+            android:id="@+id/uBtCancel"
+            android:text="Cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></Button>
+    </LinearLayout>
+</LinearLayout>

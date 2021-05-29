@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">1Money</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="category">
+        <item>Hang thang</item>
+        <item>Nhu cau can thiet</item>
+        <item>Vui choi</item>
+        <item>Dau tu - Cho vay/No</item>
+        <item>Luong</item>
+    </string-array>
+    <string-array name="type">
+        <item>Thu</item>
+        <item>Chi</item>
+    </string-array>
+    <string-array name="BH">
+        <item>3750</item>
+        <item>3320</item>
+        <item>2900</item>
+        <item>2580</item>
+    </string-array>
+    <string-array name="PT">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>17</item>
+        <item>19</item>
+        <item>20</item>
+    </string-array>
+</resources>
