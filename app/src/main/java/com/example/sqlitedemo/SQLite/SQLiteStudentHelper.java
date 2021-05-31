@@ -76,22 +76,23 @@ public class SQLiteStudentHelper extends SQLiteOpenHelper {
         return list;
     }
 
-//    public List<Note> getByName(String name) {
-//        String sql = "name like ?";
-//        String[] args = { "%" + name + "%" };
-//        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
-//        Cursor cursor = sqLiteDatabase.query("student", null, sql, args, null, null, null);
-//        List<Cong> students = new ArrayList<>();
-//        while(cursor.moveToNext()) {
-//            int id = cursor.getInt(0);
-//            String studentName = cursor.getString(1);
-//            boolean gender = cursor.getInt(2) == 1;
-//            double mark = cursor.getDouble(3);
-//            Cong student = new Cong(id, studentName, gender, mark);
-//            students.add(student);
-//        }
-//        return students;
-//    }
+    public List<Note> getByName(String title) {
+        String sql = "title like ?";
+        String[] args = { "%" + title + "%" };
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.query("student", null, sql, args, null, null, null);
+        List<Note> lsnotes = new ArrayList<>();
+        while(cursor.moveToNext()) {
+            int id = cursor.getInt(0);
+            String titleNote = cursor.getString(1);
+            String desNote = cursor.getString(2);
+            String dateNote = cursor.getString(3);
+            Note student = new Note(id, titleNote, desNote, dateNote);
+            lsnotes.add(student);
+            System.out.println("search log"+titleNote);
+        }
+        return lsnotes;
+    }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

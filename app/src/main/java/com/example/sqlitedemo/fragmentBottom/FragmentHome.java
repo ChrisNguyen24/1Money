@@ -4,7 +4,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.SearchView;
+import android.widget.SearchView;
+import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,7 +33,6 @@ import java.util.List;
 
 
 public class FragmentHome extends Fragment {
-    private SearchView searchView;
     private RevAdapter revAdapter;
     private RevDoneAdapter revDoneAdapter;
     private View v;
@@ -44,7 +44,6 @@ public class FragmentHome extends Fragment {
     private SQLiteStudentHelper sqli;
     private SQLiteNoteDone sqLiteNoteDone;
     private Button resetDone;
-
     private MenuItem fav;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -114,9 +113,31 @@ public class FragmentHome extends Fragment {
     }
 
     @Override
-    public void onCreateOptionsMenu(@NonNull  Menu menu, @NonNull  MenuInflater inflater) {
-        inflater.inflate(R.menu.mymenu,menu);
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
 
+    @Override
+    public void onCreateOptionsMenu(@NonNull  Menu menu, @NonNull  MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_search,menu);
+        MenuItem item = menu.findItem(R.id.mSearch);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(item);
+        searchView = (SearchView) MenuItemCompat.getActionView(item);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                list = sqli.getByName(newText);
+                revAdapter.setData(list);
+                recyclerView.setAdapter(revAdapter);
+                return true;
+            }
+        });
         super.onCreateOptionsMenu(menu, inflater);
     }
 }

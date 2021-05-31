@@ -20,7 +20,7 @@
         android:id="@+id/viewPager"
         app:layout_constraintBottom_toTopOf="@+id/btnav"
         android:layout_width="match_parent"
-        android:layout_height="510dp"></androidx.viewpager.widget.ViewPager>
+        android:layout_height="match_parent"></androidx.viewpager.widget.ViewPager>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btnav"
         app:layout_constraintBottom_toBottomOf="parent"
