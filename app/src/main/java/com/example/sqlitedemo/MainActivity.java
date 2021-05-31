@@ -7,14 +7,17 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.sqlitedemo.Money.ActivityNewMoney;
 import com.example.sqlitedemo.SQLite.SQLiteStudentHelper;
 import com.example.sqlitedemo.adapter.RevAdapter;
 import com.example.sqlitedemo.fragmentBottom.FragmentButtomAdapter;
+import com.example.sqlitedemo.menu.ActivityContact;
 import com.example.sqlitedemo.model.Cong;
 import com.example.sqlitedemo.Note.ActivityCreateStudent;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -130,4 +133,25 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.rev);
     }
 
+    //@Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.mymenu,menu);
+//        return super.onCreateOptionsMenu(menu);
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        switch (item.getItemId()){
+//            case R.id.myInfo:
+//                //Toast.makeText(this,"get contact", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(this, ActivityContact.class);
+//                startActivity(intent);
+//                break;
+//            case R.id.myExit:
+//                System.exit(0);
+//                break;
+//        }
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 }

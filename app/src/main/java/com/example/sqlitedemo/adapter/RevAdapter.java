@@ -14,7 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sqlitedemo.Note.ActivitySelectedItem;
 import com.example.sqlitedemo.R;
+import com.example.sqlitedemo.SQLite.SQLiteNoteDone;
 import com.example.sqlitedemo.SQLite.SQLiteStudentHelper;
+import com.example.sqlitedemo.fragmentBottom.FragmentHome;
 import com.example.sqlitedemo.model.Note;
 
 import java.util.List;
@@ -23,9 +25,13 @@ public class RevAdapter extends RecyclerView.Adapter<RevAdapter.CardView>{
     private Activity activity;
     private List<Note> mList;
     private SQLiteStudentHelper sqLiteStudentHelper;
+    private SQLiteNoteDone sqLiteNoteDone;
+    private RevDoneAdapter revDoneAdapter;
 
     public RevAdapter(Activity activity) {
         sqLiteStudentHelper = new SQLiteStudentHelper(activity);
+        sqLiteNoteDone = new SQLiteNoteDone(activity);
+        revDoneAdapter = new RevDoneAdapter(activity);
         this.activity = activity;
     }
 
@@ -52,12 +58,22 @@ public class RevAdapter extends RecyclerView.Adapter<RevAdapter.CardView>{
         holder.id.setText(Integer.toString(c.getId()));
         holder.title.setText(c.getTitle());
         holder.des.setText(c.getDescription());
+        holder.done.setChecked(false);
         holder.done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(v.getContext(), "tessst",Toast.LENGTH_SHORT).show();
                 sqLiteStudentHelper.deleteById(c.getId());
                 setData(sqLiteStudentHelper.getAll());
+                //end update note up
+
+                //update done
+                //test
+                sqLiteNoteDone.addDone(c);
+                for(Note i:sqLiteNoteDone.getAllDone()){
+                    System.out.println("test note done "+i.toString());
+                }
+                revDoneAdapter.setData(sqLiteNoteDone.getAllDone());
 
             }
         });

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,21 +13,34 @@
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/rev"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
-    <TextView
-        android:layout_margin="10dp"
-        android:textStyle="bold"
-        android:text="List complete"
-        app:layout_constraintTop_toBottomOf="@+id/rev"
-        android:id="@+id/DoneTV"
+        android:layout_height="250dp"></androidx.recyclerview.widget.RecyclerView>
+    <LinearLayout
+
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></TextView>
+        android:layout_height="wrap_content">
+        <TextView
+            android:textStyle="bold"
+            android:text="List complete"
+            android:id="@+id/DoneTV"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"></TextView>
+        <Button
+            android:textColor="#ccc"
+            android:id="@+id/resetDone"
+            android:backgroundTint="#0CCCCCCC"
+            android:text="Reset"
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"></Button>
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginTop="10dp"
         android:id="@+id/revDone"
         app:layout_constraintTop_toBottomOf="@id/DoneTV"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
     <androidx.appcompat.widget.SearchView
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,4 +48,4 @@
         android:id="@+id/serView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></androidx.appcompat.widget.SearchView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

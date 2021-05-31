@@ -56,4 +56,14 @@ public class Note implements Serializable {
     public void setDate(String date) {
         this.date = date;
     }
+
+    @Override
+    public String toString() {
+        return "Note{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", date='" + date + '\'' +
+                '}';
+    }
 }
