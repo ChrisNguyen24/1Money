@@ -16,11 +16,11 @@ public interface ApiService {
 //    link api https://corona.lmao.ninja/v2/all
     Gson gson = new GsonBuilder().setDateFormat("yyyy-mm-dd:mm:ss").create();
     ApiService apiService = new Retrofit.Builder()
-            .baseUrl("https://corona.lmao.ninja")
+            .baseUrl("https://disease.sh/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
             .create(ApiService.class);
 
-    @GET("/v2/all")
+    @GET("v3/covid-19/all")
     Call<Covid> getCovid();
 }
