@@ -74,7 +74,6 @@ public class RevAdapter extends RecyclerView.Adapter<RevAdapter.CardView>{
                     System.out.println("test note done "+i.toString());
                 }
                 revDoneAdapter.setData(sqLiteNoteDone.getAllDone());
-
             }
         });
 

@@ -2,24 +2,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:padding="10dp"
-    android:layout_marginTop="50dp"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Note.ActivitySelectedItem">
-
+    <TextView
+        android:gravity="center_horizontal"
+        android:text="Note Infomation"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
     <EditText
+        android:layout_marginTop="15dp"
+        android:background="@drawable/mystyle"
         android:id="@+id/uTitle"
         android:hint="Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></EditText>
 
     <EditText
+        android:layout_marginTop="15dp"
+        android:background="@drawable/mystyle"
         android:id="@+id/uDescription"
         android:hint="Description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></EditText>
     <EditText
+        android:layout_marginTop="15dp"
+        android:background="@drawable/mystyle"
         android:id="@+id/uDate"
         android:hint="Date infomation"
         android:layout_width="match_parent"
@@ -29,7 +40,6 @@
         android:id="@+id/uBtUpdate"
         android:text="Update"
         android:layout_marginTop="20dp"
-        android:layout_marginHorizontal="60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></Button>
     <Button
@@ -37,7 +47,6 @@
         android:id="@+id/uBtDel"
         android:text="Delete"
         android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></Button>
     <Button
@@ -45,7 +54,6 @@
         android:id="@+id/uBtCancel"
         android:text="Cancel"
         android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></Button>
 </LinearLayout>

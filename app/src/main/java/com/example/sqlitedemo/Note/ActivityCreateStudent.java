@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 
 import com.example.sqlitedemo.MyReceiver;
@@ -26,14 +28,21 @@ import java.util.Calendar;
 
 public class ActivityCreateStudent extends AppCompatActivity {
     private Button btAdd,btCacel;
-    private EditText etTitle, etDes, etDate;
+    private EditText etTitle, etDes, etDate, moreWho,moreTime,moreLocate;
     private RadioButton rb1,rb2;
+    private ImageView btMore;
+    private LinearLayout linearLayoutMore;
 
+    private int flag = 1;
     private SQLiteStudentHelper sqli;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_student);
+        moreWho = findViewById(R.id.ExpandFor);
+        moreTime = findViewById(R.id.ExpandTime);
+        moreLocate = findViewById(R.id.ExpandLocate);
+
         btAdd = findViewById(R.id.cBtAdd);
         btCacel = findViewById(R.id.cBtCancel);
         etTitle = findViewById(R.id.cTitle);
@@ -41,6 +50,25 @@ public class ActivityCreateStudent extends AppCompatActivity {
         etDate = findViewById(R.id.cDate);
         rb1 = findViewById(R.id.cRb1);
         rb2 = findViewById(R.id.cRb2);
+
+        linearLayoutMore = findViewById(R.id.ExpandMore);
+        btMore = findViewById(R.id.imgMore);
+        btMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(flag == 1){
+                    linearLayoutMore.setVisibility(View.VISIBLE);
+                    flag = 0;
+                    btMore.setImageResource(R.drawable.ic_baseline_short_text_24);
+                }
+                else{
+                    linearLayoutMore.setVisibility(View.GONE);
+                    btMore.setImageResource(R.drawable.down_24);
+                    flag = 1;
+                }
+            }
+        });
+
         sqli = new SQLiteStudentHelper(this);
         etDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,6 +135,8 @@ public class ActivityCreateStudent extends AppCompatActivity {
                     //pending intent de goi myreciever chay ngam
                     PendingIntent pendingIntent = PendingIntent.getBroadcast(ActivityCreateStudent.this,0,intent,0);//dat thong bao
                     am.set(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),pendingIntent);
+
+
                 }
                 finish();
             }
@@ -117,6 +147,8 @@ public class ActivityCreateStudent extends AppCompatActivity {
                 finish();
             }
         });
+
+
     }
 
 

@@ -83,6 +83,34 @@ public class SQLiteMoneyHelper extends SQLiteOpenHelper {
         }
         return list;
     }
+
+    //getAll
+    public float balance(float wallet){
+        float bal = 0;
+        List<Money> list = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.query("money", null, null, null, null, null, null);
+        while (cursor != null && cursor.moveToNext()){
+            int moneyId = cursor.getInt(cursor.getColumnIndex("id"));
+            String amount = cursor.getString(cursor.getColumnIndex("amount"));
+            String date = cursor.getString(cursor.getColumnIndex("date"));
+            String category = cursor.getString(cursor.getColumnIndex("category"));
+            String type = cursor.getString(cursor.getColumnIndex("type"));
+            String note = cursor.getString(cursor.getColumnIndex("note"));
+            Money money = new Money(moneyId,amount,date,category,type,note);
+            System.out.println(money.toString());
+            list.add(money);
+        }
+        for(Money i:list){
+            if(i.getType().equalsIgnoreCase("Chi")){
+                bal -= Float.parseFloat(i.getAmount());
+            }
+            else{
+                bal += Float.parseFloat(i.getAmount());
+            }
+        }
+        return wallet + bal;
+    }
     //getByCategory
     public List<Money> getByCategory(String category) {
         String sql = "category like ?";

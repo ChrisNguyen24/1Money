@@ -43,13 +43,14 @@ public class FragmentHome extends Fragment {
     //sqli
     private SQLiteStudentHelper sqli;
     private SQLiteNoteDone sqLiteNoteDone;
-    private Button resetDone;
+    private Button resetDone,getDone;
     private MenuItem fav;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_home, container, false);
+        getDone = v.findViewById(R.id.getDone);
         recyclerView = v.findViewById(R.id.rev);
 
         revAdapter = new RevAdapter(getActivity());
@@ -84,6 +85,17 @@ public class FragmentHome extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        getDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                revDoneAdapter.setData(sqLiteNoteDone.getAllDone());
+                revDoneAdapter.notifyDataSetChanged();
+                recyclerViewDone.setAdapter(revDoneAdapter);
+            }
+        });
+        revDoneAdapter.setData(sqLiteNoteDone.getAllDone());
+        revDoneAdapter.notifyDataSetChanged();
+        recyclerViewDone.setAdapter(revDoneAdapter);
         super.onViewCreated(view, savedInstanceState);
         /*searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -99,7 +111,6 @@ public class FragmentHome extends Fragment {
                 return false;
             }
         });*/
-
     }
 
     @Override
@@ -110,6 +121,7 @@ public class FragmentHome extends Fragment {
         revAdapter.setData(list);
         done = sqLiteNoteDone.getAllDone();
         revDoneAdapter.setData(done);
+        recyclerViewDone.setAdapter(revDoneAdapter);
     }
 
     @Override

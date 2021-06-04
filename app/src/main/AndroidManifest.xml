@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SQLiteDemo"
         android:usesCleartextTraffic="true">
-        <activity android:name=".menu.ActivityContact"></activity>
+        <activity android:name=".Money.ActivityAddWallet"></activity>
+        <activity android:name=".menu.ActivityContact" />
         <activity android:name=".extention.ActivityTax" />
         <activity android:name=".extention.ActivityCovid" />
         <activity android:name=".Money.ActivitySelectMoney" />

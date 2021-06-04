@@ -41,6 +41,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"></TextView>
         <EditText
+            android:background="@drawable/mystyle"
             android:inputType="numberDecimal"
             android:id="@+id/taxSalary"
             android:hint="Thu nhap thang "
@@ -91,7 +92,7 @@
         android:layout_height="wrap_content"></Button>
     <TextView
         android:padding="10dp"
-        android:text="Thu nhap phai dong"
+        android:text="Thu nhap chiu thue"
         android:id="@+id/taxTaxRes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></TextView>

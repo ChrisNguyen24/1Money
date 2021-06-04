@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:layout_marginTop="50dp"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:padding="10dp"
@@ -9,6 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".Note.ActivityCreateStudent">
     <EditText
+        android:background="@drawable/mystyle"
         android:id="@+id/cTitle"
         android:hint="Title"
         android:layout_width="match_parent"
@@ -30,15 +30,48 @@
             android:layout_height="wrap_content"></RadioButton>
     </RadioGroup>
     <EditText
+        android:background="@drawable/mystyle"
         android:id="@+id/cDescription"
         android:hint="Description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></EditText>
     <EditText
+        android:layout_marginTop="15dp"
+        android:background="@drawable/mystyle"
+        android:inputType="date"
         android:id="@+id/cDate"
         android:hint="Date infomation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></EditText>
+    <ImageView
+        android:layout_gravity="end"
+        android:id="@+id/imgMore"
+        android:src="@drawable/down_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></ImageView>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/ExpandMore"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/ExpandFor"
+            android:hint="For who"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+        <EditText
+            android:id="@+id/ExpandTime"
+            android:hint="Time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+        <EditText
+            android:id="@+id/ExpandLocate"
+            android:hint="Locate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+
+    </LinearLayout>
     <LinearLayout
         android:gravity="center_horizontal"
         android:layout_width="match_parent"
@@ -58,5 +91,4 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"></Button>
     </LinearLayout>
-
 </LinearLayout>

@@ -23,13 +23,18 @@
             android:textStyle="bold"
             android:text="List complete"
             android:id="@+id/DoneTV"
-            android:layout_width="200dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"></TextView>
         <Button
             android:textColor="#ccc"
             android:id="@+id/resetDone"
             android:backgroundTint="#0CCCCCCC"
             android:text="Reset"
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"></Button>
+        <Button
+            android:id="@+id/getDone"
+            android:text="Update"
             android:layout_width="wrap_content"
             android:layout_height="39dp"></Button>
     </LinearLayout>

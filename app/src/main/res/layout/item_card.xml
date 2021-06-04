@@ -13,6 +13,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:layout_marginHorizontal="5dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -37,6 +38,7 @@
                 android:layout_height="wrap_content"></CheckBox>
         </LinearLayout>
         <LinearLayout
+            android:layout_marginHorizontal="5dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
